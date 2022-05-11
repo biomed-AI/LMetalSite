@@ -15,7 +15,7 @@ tqdm  4.59.0
 # Pretrained language model
 You need to prepare the pretrained language model ProtTrans to run MetalSite:
 1. Download the pretrained ProtT5-XL-UniRef50 model ([guide](https://github.com/agemagician/ProtTrans)). # ~ 11.3 GB (download: 5.3 GB)
-2. Set path variable `ProtTrans_path` in `./script/MetalSite_predict.py`.
+2. Set path variable `ProtTrans_path` in `./script/MetalSite_predict.py`.  
 
 # Run MetalSite for prediction
 Simply run:
@@ -34,8 +34,8 @@ Other parameters:
 
 # Dataset and model
 We provide the datasets and the trained MetalSite models here for those interested in reproducing our paper.  
-The metal ion datasets used in this study are stored in `./datasets/` in fasta format.
-The trained MetalSite models from 5-fold cross-validation can be found under `./model/`.
+The metal ion datasets used in this study are stored in `./datasets/` in fasta format.  
+The trained MetalSite models from 5-fold cross-validation can be found under `./model/`.  
 
 # Contact
 Qianmu Yuan (yuanqm3@mail2.sysu.edu.cn)  
