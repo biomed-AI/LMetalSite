@@ -1,6 +1,6 @@
 # Introduction
 MetalSite is an alignment-free sequence-based metal ion-binding site predictor based on pretrained language model and multi-task learning. MetalSite is easy to install and use, and is also accurate (surpassing the state-of-the-art structure-based methods) and really fast. Prediction of 500 sequences with an average length of 300 only takes about 2 minutes using GPU, or 20 minutes using CPU.
-![MetalSite_architecture](https://github.com/biomed-AI/MetalSite/blob/main/image/MetalSite_architecture.jpg)
+![LMetalSite_architecture](https://github.com/biomed-AI/MetalSite/blob/main/image/LMetalSite_architecture.jpg)
 
 # System requirement
 MetalSite is developed under Linux environment with:  
