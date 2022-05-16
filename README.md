@@ -3,7 +3,7 @@ LMetalSite is an alignment-free sequence-based metal ion-binding site predictor 
 ![LMetalSite_architecture](https://github.com/biomed-AI/LMetalSite/blob/main/image/LMetalSite_architecture.jpg)
 
 # System requirement
-LMetalSite is developed under Linux environment with:
+LMetalSite is developed under Linux environment with:  
 python  3.8.5  
 numpy  1.19.1  
 pandas  1.1.3  
