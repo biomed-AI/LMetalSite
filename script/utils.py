@@ -6,7 +6,7 @@ MAX_INPUT_SEQ = 500
 ID_col = 'ID'
 sequence_col = "Sequence"
 metal_list = ["ZN", "CA", "MG", "MN"]
-MetalSite_threshold = [0.42, 0.34, 0.5, 0.47]
+LMetalSite_threshold = [0.42, 0.34, 0.5, 0.47]
 
 NN_config = {
     'feature_dim': 1024,

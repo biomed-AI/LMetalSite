@@ -80,10 +80,10 @@ def predict(run_id, ID_list, seq_list, protein_features, config, outpath, pred_b
     test_dataset = MetalDataset(pred_df, protein_features)
     test_dataloader = DataLoader(test_dataset, batch_size = pred_bs, collate_fn = test_dataset.collate_fn, shuffle = False, drop_last = False, num_workers = 4)
 
-    # Load MetalSite models
+    # Load LMetalSite models
     models = []
     for i in range(5):
-        model = MetalSite(config["feature_dim"], config["hidden_dim"], config["num_encoder_layers"], config["num_heads"], config["augment_eps"], config["dropout"]).to(device)
+        model = LMetalSite(config["feature_dim"], config["hidden_dim"], config["num_encoder_layers"], config["num_heads"], config["augment_eps"], config["dropout"]).to(device)
 
         state_dict = torch.load(model_path + 'fold{}.ckpt'.format(i), device)
         model.load_state_dict(state_dict)
@@ -106,7 +106,7 @@ def predict(run_id, ID_list, seq_list, protein_features, config, outpath, pred_b
             for i in range(len(metal_list)):
                 for j in range(len(outputs)):
                     prob = np.round(outputs[j, i*maxlen:i*maxlen+protein_masks[j].sum()], decimals = 4)
-                    pred = (prob >= MetalSite_threshold[i]).astype(np.int)
+                    pred = (prob >= LMetalSite_threshold[i]).astype(np.int)
                     prob_col[i].append(",".join(prob.astype(np.str).tolist()))
                     pred_col[i].append(",".join(pred.astype(np.str).tolist()))
 
@@ -142,9 +142,9 @@ if __name__ == '__main__':
     parser.add_argument("--fasta", type = str, help = "Input fasta file")
     parser.add_argument("--outpath", type = str, help = "Output path to save intermediate features and final predictions")
     parser.add_argument("--feat_bs", type = int, default=10, help = "Batch size for ProtTrans feature extraction")
-    parser.add_argument("--pred_bs", type = int, default=16, help = "Batch size for MetalSite prediction")
+    parser.add_argument("--pred_bs", type = int, default=16, help = "Batch size for LMetalSite prediction")
     parser.add_argument("--save_feat", action = "store_true", help = "Save intermediate ProtTrans features")
-    parser.add_argument("--gpu", action = "store_true", help = "Use GPU for feature extraction and MetalSite prediction")
+    parser.add_argument("--gpu", action = "store_true", help = "Use GPU for feature extraction and LMetalSite prediction")
 
     args = parser.parse_args()
     outpath = args.outpath.rstrip("/") + "/"
