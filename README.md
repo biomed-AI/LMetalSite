@@ -37,6 +37,21 @@ We provide the datasets and the trained LMetalSite models here for those interes
 The metal ion datasets used in this study are stored in `./datasets/` in fasta format.  
 The trained LMetalSite models from 5-fold cross-validation can be found under `./model/`.
 
-# Contact
+# Citation and contact
+Citation:  
+```bibtex
+@article{10.1093/bib/bbac444,
+    author = {Yuan, Qianmu and Chen, Sheng and Wang, Yu and Zhao, Huiying and Yang, Yuedong},
+    title = "{Alignment-free metal ion-binding site prediction from protein sequence through pretrained language model and multi-task learning}",
+    journal = {Briefings in Bioinformatics},
+    year = {2022},
+    month = {10},
+    issn = {1477-4054},
+    doi = {10.1093/bib/bbac444},
+    url = {https://doi.org/10.1093/bib/bbac444},
+}
+```
+
+Contact:  
 Qianmu Yuan (yuanqm3@mail2.sysu.edu.cn)  
 Yuedong Yang (yangyd25@mail.sysu.edu.cn)
