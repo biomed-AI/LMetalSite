@@ -149,7 +149,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     outpath = args.outpath.rstrip("/") + "/"
 
-    run_id = args.fasta.split("/")[-1].split(".")[0]
+    run_id = args.fasta.split("/")[-1].split(".")[0].replace(" ", "_")
     seq_info = process_fasta(args.fasta)
 
     if seq_info == -1:
